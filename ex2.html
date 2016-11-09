@@ -14,6 +14,10 @@
     of document.getElementsByClassName is a nodeList and can
     be accessed like an array.
     */
+    var result = document.getElementsByClassName('link');
+    for (var i = 0; i < result.length; i++) {
+      console.log(result[i].textContent);
+    }
     </script>
   </body>
 </html>

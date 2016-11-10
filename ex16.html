@@ -13,6 +13,23 @@
     the task description and a remove button
     into #tasks.
     */
+    window.addEventListener("load", function() {
+      document.querySelector('ul').addEventListener("click", function(e) {
+        if (e.target.matches('button')) {
+          e.target.parentElement.parentElement.removeChild(e.target.parentNode);
+        }
+      });
+      var newTask = document.getElementById('add-button');
+      newTask.addEventListener("click", function(e) {
+        var input = document.getElementById('input-field');
+        if (input.value !== '') {
+          var addNewLocation = document.getElementById('tasks');
+          console.log(input.value);
+          addNewLocation.innerHTML += '<li>' + input.value + ' <button>remove</button></li>';
+        }
+        input.textContent = '';
+      });
+    });
     </script>
   </head>
   <body>
